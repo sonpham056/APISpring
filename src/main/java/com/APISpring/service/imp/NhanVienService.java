@@ -1,5 +1,7 @@
 package com.APISpring.service.imp;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,26 @@ public class NhanVienService implements INhanVienService{
 	@Override
 	public NhanVien findById(String maNV) {
 		return nhanVienDAO.findById(maNV);
+	}
+
+	@Override
+	public List<NhanVien> findAll() {
+		return nhanVienDAO.findAll();
+	}
+
+	@Override
+	public NhanVien save(NhanVien nhanVien) {
+		return nhanVienDAO.saveNhanVien(nhanVien);
+	}
+
+	@Override
+	public NhanVien update(NhanVien nhanVien) {
+		return nhanVienDAO.updateNhanVien(nhanVien);
+	}
+
+	@Override
+	public int delete(NhanVien nhanVien) {
+		return nhanVienDAO.deleteNhanVien(nhanVien);
 	}
 
 }
