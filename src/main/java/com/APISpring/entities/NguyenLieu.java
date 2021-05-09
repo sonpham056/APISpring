@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="NguyenLieu")
 public class NguyenLieu implements Serializable{
 	/**
@@ -19,6 +21,7 @@ public class NguyenLieu implements Serializable{
 	private Integer soLuong;
 	
 	@OneToMany(mappedBy = "nguyenLieu")
+	@JsonIgnore
 	private List<MonAn> monAns;
 
 	public String getMaNguyenLieu() {
