@@ -20,22 +20,22 @@ public class LoaiMonAnAPI {
 	@Autowired
 	ILoaiMonAnService loaiMonAnService;
 
-	@PostMapping(value = "api/loaimonan")
+	@PostMapping(value = "/api/loaimonan")
 	public LoaiMonAn createLoaiMonAn(@RequestBody LoaiMonAn loaiMonAn) {
 		return loaiMonAnService.save(loaiMonAn);
 	}
 
-	@PutMapping(value = "api/loaimonan")
+	@PutMapping(value = "/api/loaimonan")
 	public LoaiMonAn updateLoaiMonAn(@RequestBody LoaiMonAn loaiMonAn) {
 		return loaiMonAnService.update(loaiMonAn);
 	}
 
-	@DeleteMapping(value = "api/loaimonan")
+	@DeleteMapping(value = "/api/loaimonan")
 	public int deleteLoaiMonAn(@RequestBody LoaiMonAn loaiMonAn) {
 		return loaiMonAnService.delete(loaiMonAn);
 	}
 
-	@GetMapping(value = "api/loaimonan")
+	@GetMapping(value = "/api/loaimonan")
 	public List<LoaiMonAn> getLoaiMonAn() {
 		return loaiMonAnService.getAll();
 	}

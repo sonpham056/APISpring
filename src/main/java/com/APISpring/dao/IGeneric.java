@@ -12,5 +12,5 @@ public interface IGeneric<T> {
 	@SuppressWarnings("hiding")
 	<T> T get(String className, String id);
 	@SuppressWarnings("hiding")
-	<T> List<T> getAll();
+	<T> List<T> getAll(String className);
 }

@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.APISpring.dao.IGeneric;
-import com.APISpring.entities.LoaiMonAn;
 import com.APISpring.util.HibernateUtil;
 
 
@@ -75,18 +74,18 @@ public class AbstractDAO<T> implements IGeneric<T> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			session.close();
+			
 		}
 		return obj;
 	}
 
 	@SuppressWarnings({ "unchecked", "hiding" })
 	@Override
-	public <T> List<T> getAll() {
+	public <T> List<T> getAll(String className) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		List<T> list = null;
 		try {
-			String hql = "from LoaiMonAn";
+			String hql = "from " + className;
 			list = session.createQuery(hql).list();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -95,5 +94,6 @@ public class AbstractDAO<T> implements IGeneric<T> {
 		}
 		return list;
 	}
-
+	
 }
+

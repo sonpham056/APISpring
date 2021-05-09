@@ -17,12 +17,12 @@ public class CTHoaDon implements Serializable{
 	private Integer soLuong;
 	
 	@Id
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="maHD")
 	private HoaDon hoaDon;
 	
 	@Id
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="maMA")
 	private MonAn monAn;
 

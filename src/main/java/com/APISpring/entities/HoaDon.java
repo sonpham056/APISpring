@@ -19,11 +19,11 @@ public class HoaDon implements Serializable{
 	private Date ngayLap;
 	private Long tongTien;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name = "maNV")
 	private NhanVien nhanVien;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="maKH")
 	private KhachHang khachHang;
 
