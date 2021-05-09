@@ -31,7 +31,7 @@ public class KhachHang implements Serializable{
 	@OneToMany(mappedBy = "khachHang")
 	private List<HoaDon> hoaDons;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name = "maLoaiKH")
 	private LoaiKhachHang loaiKhachHang;
 

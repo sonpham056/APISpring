@@ -29,7 +29,7 @@ public class LoaiMonAnDAO extends AbstractDAO<LoaiMonAn> implements ILoaiMonAnDA
 
 	@Override
 	public <T> List<T> getAllLoaiMonAn() {
-		return getAll();
+		return getAll("LoaiMonAn");
 	}
 
 	@Override

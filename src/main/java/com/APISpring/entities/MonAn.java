@@ -18,11 +18,11 @@ public class MonAn implements Serializable{
 	private String tenMA;
 	private Integer status;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="maLoai")
 	private LoaiMonAn loaiMonAn;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="maNguyenLieu")
 	private NguyenLieu nguyenLieu;
 

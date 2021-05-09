@@ -3,6 +3,7 @@ package com.APISpring.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +18,7 @@ public class BangChamCong {
 	private Date batDau;
 	private Date ketThuc;
 	
-	@ManyToOne
+	@ManyToOne (fetch = FetchType.EAGER)
 	@JoinColumn(name="maNV")
 	private NhanVien nhanVien;
 
