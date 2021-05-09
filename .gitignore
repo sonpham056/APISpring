@@ -1,1 +1,6 @@
+<<<<<<< HEAD
+.pom.properties
+hibernate.cfg.xml
+=======
 /target/
+>>>>>>> 82889c5fce7a747f56c91e45a1c8ea493184f6f5
