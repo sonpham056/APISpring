@@ -3,9 +3,12 @@ package com.APISpring.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity(name="TaiKhoanKH")
 public class TaiKhoanKH implements Serializable{
@@ -17,8 +20,9 @@ public class TaiKhoanKH implements Serializable{
 	private String MK;
 	
 	@Id
-	@OneToOne()
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "maKH")
+	@JsonManagedReference
 	private KhachHang khachHang;
 
 	public String getMatKhau() {
