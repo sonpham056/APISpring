@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="NhanVien")
 public class NhanVien implements Serializable{
 	/**
@@ -23,12 +25,14 @@ public class NhanVien implements Serializable{
 	private Integer status;
 	
 	@OneToMany(mappedBy = "nhanVien")
+	@JsonIgnore
 	private List<HoaDon> hoaDons;
 	
 	@OneToOne(mappedBy = "nhanVien")
 	private TaiKhoanNV taiKhoanNV;
 	
 	@OneToMany(mappedBy = "nhanVien")
+	@JsonIgnore
 	private List<BangChamCong> bangChamCongs;
 
 	public String getMaNV() {

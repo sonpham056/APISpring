@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="TaiKhoanNV")
 public class TaiKhoanNV implements Serializable{
 	/**
@@ -17,8 +19,9 @@ public class TaiKhoanNV implements Serializable{
 	private String MK;
 	
 	@Id
-	@OneToOne
+	@OneToOne()
 	@JoinColumn(name="maNV")
+	@JsonIgnore
 	private NhanVien nhanVien;
 
 	public String getMatKhau() {

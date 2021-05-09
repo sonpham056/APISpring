@@ -82,11 +82,11 @@ public class AbstractDAO<T> implements IGeneric<T> {
 
 	@SuppressWarnings({ "unchecked", "hiding" })
 	@Override
-	public <T> List<T> getAll() {
+	public <T> List<T> getAll(String className) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		List<T> list = null;
 		try {
-			String hql = "from LoaiMonAn";
+			String hql = "from " + className;
 			list = session.createQuery(hql).list();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -95,5 +95,6 @@ public class AbstractDAO<T> implements IGeneric<T> {
 		}
 		return list;
 	}
-
+	
 }
+
