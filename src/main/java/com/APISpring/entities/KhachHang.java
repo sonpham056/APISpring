@@ -10,6 +10,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="KhachHang")
 public class KhachHang implements Serializable{
 	/**
@@ -26,13 +29,16 @@ public class KhachHang implements Serializable{
 	private Integer status;
 	
 	@OneToOne(mappedBy = "khachHang")
+	@JsonBackReference
 	private TaiKhoanKH taiKhoanKH;
 	
 	@OneToMany(mappedBy = "khachHang")
+	@JsonIgnore
 	private List<HoaDon> hoaDons;
 	
 	@ManyToOne()
 	@JoinColumn(name = "maLoaiKH")
+	@JsonIgnore
 	private LoaiKhachHang loaiKhachHang;
 
 	public String getMaKH() {
