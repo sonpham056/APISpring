@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name="NhanVien")
@@ -29,6 +30,7 @@ public class NhanVien implements Serializable{
 	private List<HoaDon> hoaDons;
 	
 	@OneToOne(mappedBy = "nhanVien")
+	@JsonBackReference
 	private TaiKhoanNV taiKhoanNV;
 	
 	@OneToMany(mappedBy = "nhanVien")
