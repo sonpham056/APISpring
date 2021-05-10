@@ -22,12 +22,12 @@ public class NguyenLieuService implements INguyenLieuService {
 
 	@Override
 	public NguyenLieu create(NguyenLieu nl) {
-		return nguyenLieu.createNL(nl);
+		return nguyenLieu.saveNL(nl);
 	}
 
 	@Override
 	public NguyenLieu find(String ma) {
-		return nguyenLieu.findByNL(ma);
+		return nguyenLieu.findById(ma);
 	}
 
 	@Override

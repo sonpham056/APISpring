@@ -30,8 +30,8 @@ public class NguyenLieuAPI {
 	}
 	
 	@GetMapping(value = "/api/nguyenlieu/{id}")
-	public NguyenLieu findNL(@PathVariable String ma) {
-		return nguyenLieuService.find(ma);
+	public NguyenLieu findNL(@PathVariable String id) {
+		return nguyenLieuService.find(id);
 	}
 	
 	@GetMapping(value = "/api/nguyenlieu")

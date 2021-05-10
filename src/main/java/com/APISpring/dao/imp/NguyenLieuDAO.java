@@ -16,12 +16,12 @@ public class NguyenLieuDAO extends AbstractDAO<NguyenLieu> implements INguyenLie
 	}
 
 	@Override
-	public NguyenLieu createNL(NguyenLieu nl) {
+	public NguyenLieu saveNL(NguyenLieu nl) {
 		return save(nl);
 	}
 
 	@Override
-	public NguyenLieu findByNL(String ma) {
+	public NguyenLieu findById(String ma) {
 		return get("com.APISpring.entities.NguyenLieu", ma);
 	}
 
