@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -36,9 +37,8 @@ public class KhachHang implements Serializable{
 	@JsonIgnore
 	private List<HoaDon> hoaDons;
 	
-	@ManyToOne()
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "maLoaiKH")
-	@JsonIgnore
 	private LoaiKhachHang loaiKhachHang;
 
 	public String getMaKH() {
