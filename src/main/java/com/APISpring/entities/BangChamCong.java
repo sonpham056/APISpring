@@ -18,7 +18,7 @@ public class BangChamCong {
 	private Date batDau;
 	private Date ketThuc;
 	
-	@ManyToOne (fetch = FetchType.EAGER)
+	@ManyToOne 
 	@JoinColumn(name="maNV")
 	private NhanVien nhanVien;
 
