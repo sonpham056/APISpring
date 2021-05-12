@@ -3,7 +3,6 @@ package com.APISpring.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -20,7 +19,7 @@ public class TaiKhoanNV implements Serializable{
 	private String MK;
 	
 	@Id
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne
 	@JoinColumn(name="maNV")
 	@JsonManagedReference
 	private NhanVien nhanVien;
